@@ -1,6 +1,7 @@
 const API_URL = process.env.PROXY_SERVER_URL;
 
 const nextConfig = {
+  output: 'export',
   typescript: {
     ignoreBuildErrors: true,
   },
