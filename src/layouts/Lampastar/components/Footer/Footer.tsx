@@ -21,7 +21,7 @@ import {
   FooterWrapper,
   StyledFooter
 } from "@layouts/Lampastar/components/Footer/styled";
-import Map from '@resources/images/map.jpg';
+import Map from '@../../../../resources/images/map.jpg';
 import { FOR_CLIENT_MENU } from '../../../../common/constants';
 import { CallMeForm } from '../../../../modules/Contacts';
 import { Logo } from '../../../../resources/images';
