@@ -23,7 +23,8 @@ import {
 } from "@layouts/Lampastar/components/Footer/styled";
 import { FOR_CLIENT_MENU } from '../../../../common/constants';
 import { CallMeForm } from '../../../../modules/Contacts';
-import { Logo, Map } from '@resources/images';
+import { Logo } from '@resources/images';
+import Map from '../../../../../public/mapFooter.jpg'
 import { WhatsApp, Telegram, Instagram, Digital } from '../../../../ui/icons';
 
 const { home } = ROUTES;
