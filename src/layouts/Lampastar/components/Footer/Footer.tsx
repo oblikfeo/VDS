@@ -23,7 +23,7 @@ import {
 } from "@layouts/Lampastar/components/Footer/styled";
 import { FOR_CLIENT_MENU } from '../../../../common/constants';
 import { CallMeForm } from '../../../../modules/Contacts';
-import { Logo, Map } from '../../../../resources/images';
+import { Logo } from '../../../../resources/images';
 import { WhatsApp, Telegram, Instagram, Digital } from '../../../../ui/icons';
 
 const { home } = ROUTES;
@@ -51,7 +51,7 @@ export const Footer = () => (
           <FooterContentWrapper>
             <FooterContentText>На карте</FooterContentText>
             <FooterMap>
-              <Image src={Map} alt="Заглушка" width={323} height={213} />
+              <Image src="/_next/static/media/map.d62b6283.jpg" alt="Заглушка" width={323} height={213} />
             </FooterMap>
           </FooterContentWrapper>
         </FooterContent>
