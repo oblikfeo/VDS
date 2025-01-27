@@ -4,6 +4,8 @@ import React from 'react';
 import styled from 'styled-components';
 import emailjs from 'emailjs-com';
 
+import { ToastStatusEnum } from '../../../common/types';
+import { useToasts } from '../../../common/hooks';
 import { Field, FieldMobile } from '../../../common/components/Field';
 import { adaptive, ButtonContained } from '../../../ui/components';
 import { MESSAGE_FIELDS, TELEPHONE_FIELD } from '../constants';
@@ -11,7 +13,6 @@ import { CallMeFormValuesType } from '../types';
 import { callMeValidationSchema } from '../utils';
 import { NameContainer } from "@modules/Contacts/components/ContactForm";
 
-// Убедитесь, что у вас есть переменная окружения с вашим USER_ID от EmailJS
 const EMAILJS_USER_ID = 'v-7auv5vOY-kY5tiN';
 
 export const CallForm = styled.div`
@@ -42,20 +43,21 @@ export const MobileSubmitButton = styled(ButtonContained)`
 
 export const CallMeForm = () => {
 
+  const { addToast } = useToasts();
   const onSubmitHandler = async (values: CallMeFormValuesType, { resetForm }: FormikHelpers<CallMeFormValuesType>) => {
+
     try {
-      // Отправляем данные формы через EmailJS
       await emailjs.send(
-        'service_dq5xm29', // Ваш ID сервиса
-        'template_3venlpe', // Ваш ID шаблона
+        'service_dq5xm29',
+        'template_3venlpe',
         values,
         EMAILJS_USER_ID
       )
-      alert('Сообщение успешно отправлено!');
-      resetForm(); // Сбрасываем форму после успешной отправки
+      addToast({ message: 'Сообщение отправлено', status: ToastStatusEnum.SUCCESS })
+      resetForm();
     } catch (error) {
       console.error('Ошибка при отправке сообщения:', error);
-      alert('Произошла ошибка при отправке сообщения. Попробуйте позже.');
+      addToast({ message: 'Не удалось отправить сообщение, попробуйте позже', status: ToastStatusEnum.ERROR })
     }
   }
 
