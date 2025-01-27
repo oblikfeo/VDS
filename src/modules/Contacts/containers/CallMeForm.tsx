@@ -57,22 +57,22 @@ export const CallMeForm = () => {
       console.error('Ошибка при отправке сообщения:', error);
       alert('Произошла ошибка при отправке сообщения. Попробуйте позже.');
     }
-
-    return (
-      <Formik initialValues={initialValues} onSubmit={onSubmitHandler} validationSchema={callMeValidationSchema}>
-        <Form>
-          <CallForm>
-            <NameContainer>
-              <Field name={MESSAGE_FIELDS.NAME} placeholder="Ваше имя" validation />
-            </NameContainer>
-            <FieldMobile name={TELEPHONE_FIELD} placeholder="+7(___)___-__-__" validation />
-            <CallMeFormBottom>
-              <CallMeFormPersonal>Нажимая кнопку «Отправить»,<br />Вы даете свое согласие на обработку персональных данных.</CallMeFormPersonal>
-              <MobileSubmitButton>Отправить</MobileSubmitButton>
-            </CallMeFormBottom>
-          </CallForm>
-        </Form>
-      </Formik>
-    );
   }
+
+  return (
+    <Formik initialValues={initialValues} onSubmit={onSubmitHandler} validationSchema={callMeValidationSchema}>
+      <Form>
+        <CallForm>
+          <NameContainer>
+            <Field name={MESSAGE_FIELDS.NAME} placeholder="Ваше имя" validation />
+          </NameContainer>
+          <FieldMobile name={TELEPHONE_FIELD} placeholder="+7(___)___-__-__" validation />
+          <CallMeFormBottom>
+            <CallMeFormPersonal>Нажимая кнопку «Отправить»,<br />Вы даете свое согласие на обработку персональных данных.</CallMeFormPersonal>
+            <MobileSubmitButton>Отправить</MobileSubmitButton>
+          </CallMeFormBottom>
+        </CallForm>
+      </Form>
+    </Formik>
+  );
 }
