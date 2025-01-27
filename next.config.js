@@ -21,6 +21,23 @@ const nextConfig = {
     ];
   },
   staticPageGenerationTimeout: 180,
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.(png|jpe?g|gif)$/i,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            publicPath: '/_next/static/media/',
+            outputPath: 'static/media/',
+            name: '[name].[ext]',
+          },
+        },
+      ],
+    });
+
+    return config;
+  },
 };
 
 module.exports = nextConfig;
