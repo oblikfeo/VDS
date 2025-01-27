@@ -21,8 +21,7 @@ import {
   FooterWrapper,
   StyledFooter
 } from "@layouts/Lampastar/components/Footer/styled";
-import { Map } from '@resources/images';
-
+import Map from '@resources/images/map.jpg';
 import { FOR_CLIENT_MENU } from '../../../../common/constants';
 import { CallMeForm } from '../../../../modules/Contacts';
 import { Logo } from '../../../../resources/images';
@@ -59,23 +58,23 @@ export const Footer = () => (
         </FooterContent>
       </FooterWrapper>
       <FooterWrapper vertical>
-        <FooterLine/>
+        <FooterLine />
         <FooterBottom>
           <FooterLinks>
             <FooterLink href="#">
-              <WhatsApp/>
+              <WhatsApp />
             </FooterLink>
             <FooterLink href="#">
-              <Telegram/>
+              <Telegram />
             </FooterLink>
             <FooterLink href="#">
-              <Instagram/>
+              <Instagram />
             </FooterLink>
           </FooterLinks>
           <FooterDigital>
             <FooterDigitalText>Создание и продвижение</FooterDigitalText>
             <FooterDigitalLink href="https://digitalaround.ru/">
-              <Digital/>
+              <Digital />
             </FooterDigitalLink>
           </FooterDigital>
         </FooterBottom>
