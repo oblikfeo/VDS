@@ -73,7 +73,7 @@ export const Header = React.memo(({ menuIsOpened, toggleMenu }: Props) => {
   })
 
   return (
-    <StyledHeader menuIsOpened={menuIsOpened} onClick={onClickHeader}>
+    <StyledHeader menuIsOpened={menuIsOpened} >
       <HeaderContainer>
         <HeaderWrapper>
           <HeaderLogo href={home.path}>
@@ -85,7 +85,7 @@ export const Header = React.memo(({ menuIsOpened, toggleMenu }: Props) => {
                 {routesMenu.length > 0 && routesMenu.map((route: RoutesType) => (
                   <StyledLinkBottom key={route.path} href={route.path}>
                     {route.active === true
-                      ? <><LinkBottomActive>{route.label}</LinkBottomActive><HeaderMenuPoint/></>
+                      ? <><LinkBottomActive>{route.label}</LinkBottomActive><HeaderMenuPoint /></>
                       : route.label
                     }
                   </StyledLinkBottom>
@@ -96,13 +96,13 @@ export const Header = React.memo(({ menuIsOpened, toggleMenu }: Props) => {
               </HeaderPhone>
             </HeaderMenuContent>
             <HeaderMenu>
-              <HeaderMenuLine/>
+              <HeaderMenuLine />
             </HeaderMenu>
           </HeaderMenuWrapper>
         </HeaderWrapper>
         <HeaderWrapper>
-          <CatalogButton onClick={onClickMenu}>
-            {menuIsOpened ? <Icon icon={Close}/> : <Icon icon={MenuIcon}/>}
+          <CatalogButton >
+            {menuIsOpened ? <Icon icon={Close} /> : <Icon icon={MenuIcon} />}
           </CatalogButton>
           <CatalogSearch />
           <HeaderIcons>
@@ -119,7 +119,7 @@ export const Header = React.memo(({ menuIsOpened, toggleMenu }: Props) => {
             </Link>
           </HeaderIcons>
         </HeaderWrapper>
-        <CustomBackground main={menuIsOpened ? true : pathname === '/'}/>
+        <CustomBackground main={menuIsOpened ? true : pathname === '/'} />
       </HeaderContainer>
     </StyledHeader>
   );
