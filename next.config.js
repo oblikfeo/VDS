@@ -2,6 +2,9 @@ const API_URL = process.env.PROXY_SERVER_URL;
 
 const nextConfig = {
   output: 'export',
+  images: {
+    unoptimized: true,
+  },
   typescript: {
     ignoreBuildErrors: true,
   },
